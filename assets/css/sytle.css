@@ -1,0 +1,37 @@
+body {
+  margin: 0;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 10px;
+  background: lightgray;
+  margin: 0;
+  border-bottom: 4px solid black;
+}
+
+nav button {
+  color: purple;
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+}
+
+button {
+  background: purple;
+  color: white;
+  border-radius: 8px;
+  font-weight: 900;
+  font-size: 1rem;
+  padding: 5px;
+}
+
+main {
+  text-align: center;
+  width: 80%;
+  margin: 5vh auto;
+  border: 2px solid #000;
+  height: 40vh;
+  border-radius: 8px;
+}
