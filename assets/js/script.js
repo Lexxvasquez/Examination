@@ -24,7 +24,7 @@ start.onclick = () => {
   const showQuestions = () => {
 
     let {Q,A,C} = questions[qI];
-    main.innerHTML = `<h1>${Q}</h1><div id='answers'></>`;
+    main.innerHTML = `<h2>${Q}</h2><div id='answers'></h2>`;
     
     A.forEach(ans => {
       answers.innerHTML += `<button onclick="handleAns('${ans}')">${ans}</button>`;
