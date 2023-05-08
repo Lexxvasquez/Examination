@@ -8,6 +8,7 @@ const showQuestions = () => {
     answers.innerHTML += `<button onclick="handleAns('${ans}')">${ans}</button>`;
   });
 };
+
 start.onclick = () => {
   let clockId = setInterval(() => {
     time--;
