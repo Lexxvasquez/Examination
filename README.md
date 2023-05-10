@@ -23,7 +23,7 @@ To add a screenshot, create an `assets/images` folder in your repository and upl
 
 ## Credits
 
-<a href="https://www.youtube.com/watch?v=PBcqGxrr9g8"target="_blank">how to make quiz app</a>
+<a href="https://www.youtube.com/watch?v=PBcqGxrr9g8"target="_blank">quizref</a>
 
 I used youtube for some reference on how to start the assignment.
 Also, went back from the class video recording to see what else I can use.

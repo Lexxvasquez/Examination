@@ -25,6 +25,7 @@ button {
   font-weight: 900;
   font-size: 1rem;
   padding: 5px;
+  margin-top: 5px;
 }
 
 main {
@@ -34,4 +35,16 @@ main {
   border: 2px solid #000;
   height: 40vh;
   border-radius: 8px;
+}
+
+#answers {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  margin: 5px auto;
+}
+
+#alert {
+  width: 80%;
+  margin: 10px auto;
 }

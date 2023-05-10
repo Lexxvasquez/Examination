@@ -13,7 +13,7 @@ const questions = [
     '2. terminal/bash',
     '3. for loops',
     '4. console.log'],
-    C: 'b'
+    C: 'terminal/bash'
   },
   {
     Q: 'What does HTML stand for?',
@@ -26,8 +26,8 @@ const questions = [
     Q: 'What are three ways to insert CSS',
     A: ['1. External CSS',
     'Internal CSS','Inline CSS',
-    'All of the above'],
-    C: 'All of the above'
+    'all of the above'],
+    C: 'all of the above'
   },
   {
     Q: 'The Condition in an if / else statment is enclosed with _____.',
