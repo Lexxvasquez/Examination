@@ -1,13 +1,13 @@
 let qI = 0;
 let time = 60;
 const prompt = document.getElementById("alert");
-
+var userScore=0
 const showQuestions = () => {
   let { Q, A, C } = questions[qI];
   main.innerHTML = `<h2>${Q}</h2><div id='answers'></h2>`;
 
   A.forEach((ans) => {
-    answers.innerHTML += `<button onclick="handleAns('${ans}')">${ans}</button>`;
+    answers.innerHTML += `<button onclick="handleAns('${ans}','${C}')">${ans}</button>`;
   });
 };
 
@@ -26,8 +26,10 @@ start.onclick = () => {
   showQuestions();
 };
 
-const handleAns = (answer) => {
-  if (answer == questions[qI].C) {
+const handleAns = (answer,C) => {
+ console.log(C)
+  if (answer === C) { 
+    userScore++ 
     prompt.innerHTML = `
     <h1 style="color:blue;border-bottom:5px solid blue">
     Correct!!!
@@ -51,20 +53,37 @@ const handleAns = (answer) => {
 function endQuiz() {
   main.innerHTML = `
     <h1>All Done!</h1>
-    <p>Your final score is ${time}.<br>
+    <p>Your final score is ${userScore}.<br>
       Enter initals: <input id="intials" /> <button onclick="handleInitals()">Submit</button> 
     </p>
   `;
 }
 
 async function handleInitals() {
-  let store = (await localStorage.initials)
-    ? JSON.parse(localStorage.initials)
-    : [];
-  store.push({ intials: intials.value, score: time });
-  localStorage.initials = JSON.stringify(store);
+  let store = JSON.parse(localStorage.getItem("initials")) || []
+    
+  
+  store.push({ initials: initials.value, score: userScore });
   console.log(store);
 }
+
+// async function handleInitals() {
+//   console.log("handleInitials");
+//   let store = (await localStorage.initials)
+//     ? JSON.parse(localStorage.initials)
+//     : [];
+//   store.push({ initials: initials.value, score: time });
+//   localStorage.initials = JSON.stringify(store);
+//   console.log("store", store);
+//   const savedScoresEl = store.map((score) => {
+//     return `<p>Initials: ${score.initials}, Score: ${score.score}</p>`;
+//   });
+//   main.innerHTML = `
+//     <h1>High Scores</h1>
+//     ${savedScoresEl.join('')}
+//   `;
+// }
+
 
 // var userScores = [{
 //   initials: "AL",
