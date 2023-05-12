@@ -1,7 +1,9 @@
 let qI = 0;
 let time = 60;
+var userScore = 0;
 const prompt = document.getElementById("alert");
-var userScore=0
+let store = JSON.parse(localStorage.getItem("initials")) || [];
+
 const showQuestions = () => {
   let { Q, A, C } = questions[qI];
   main.innerHTML = `<h2>${Q}</h2><div id='answers'></h2>`;
@@ -26,10 +28,10 @@ start.onclick = () => {
   showQuestions();
 };
 
-const handleAns = (answer,C) => {
- console.log(C)
-  if (answer === C) { 
-    userScore++ 
+const handleAns = (answer, C) => {
+  console.log(C);
+  if (answer === C) {
+    userScore++;
     prompt.innerHTML = `
     <h1 style="color:blue;border-bottom:5px solid blue">
     Correct!!!
@@ -54,17 +56,35 @@ function endQuiz() {
   main.innerHTML = `
     <h1>All Done!</h1>
     <p>Your final score is ${userScore}.<br>
-      Enter initals: <input id="intials" /> <button onclick="handleInitals()">Submit</button> 
+      Enter initals: <input id="initials" /> <button onclick="handleInitals()">Submit</button> 
     </p>
   `;
 }
 
+const showScores = () => {
+    main.innerHTML = `
+    <h1>High Score</h1>
+    <div id="scores"></div>
+    <a href="/"><button>Go back</button></a>
+    <button onclick="clearStore()">Clear High Score</button>
+  `;
+
+  store.forEach(obj => {
+    scores.innerHTML+=`<p>${obj.initials} - ${obj.score}`
+  });
+}
+
 async function handleInitals() {
-  let store = JSON.parse(localStorage.getItem("initials")) || []
-    
-  
   store.push({ initials: initials.value, score: userScore });
+  localStorage.initials= JSON.stringify(store.sort((a,b)=>b.score-a.score));
   console.log(store);
+
+ showScores();
+}
+
+const clearStore = () => {
+  localStorage.clear();
+  window.location.reload();
 }
 
 // async function handleInitals() {
@@ -83,7 +103,6 @@ async function handleInitals() {
 //     ${savedScoresEl.join('')}
 //   `;
 // }
-
 
 // var userScores = [{
 //   initials: "AL",
