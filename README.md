@@ -13,19 +13,10 @@ I also had to use "git stash" to get my original repo from github since I messed
 
 ## Usage
 
-Provide instructions and examples for use. Include screenshots as needed.
-
-To add a screenshot, create an `assets/images` folder in your repository and upload your screenshot to it. Then, using the relative filepath, add it to your README using the following syntax:
-
-    ```md
-    ![alt text](assets/images/screenshot.png)
-    ```
-
-## Credits
-
-<a href="https://www.youtube.com/watch?v=PBcqGxrr9g8"target="_blank">quizref</a>
-
-I used youtube for some reference on how to start the assignment.
-Also, went back from the class video recording to see what else I can use.
+![app](assets/images/DeployedWeb.jpg)
 
 ## Links
+
+[deployed site](https://lexxvasquez.github.io/Examination)
+
+[Github](https://github.com/Lexxvasquez/Examination)
